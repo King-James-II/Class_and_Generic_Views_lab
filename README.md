@@ -1,7 +1,7 @@
 # Class-based and Generic Views Lab Project
 
 ## Overview
-In this lab, you were taught how to incorporate features into an app by utilizing class-based and generic views in Django. The focus was on examining the differences between function-based views and class-based views, and understanding how the latter streamline the development process.
+In this lab, I was taught to incorporate features into an app by utilizing class-based and generic views in Django. The focus was on examining the differences between function-based views and class-based views, and understanding how the latter streamline the development process.
 
 ## Features Demonstrated
 - Utilization of class-based views (CBVs) such as ListView, DetailView, and View.
@@ -24,4 +24,4 @@ To run the project:
 4. Access the application through the provided URLs.
 
 ## Additional Notes
-By examining the commented-out function-based views and comparing them to the built-in generic views, you were able to observe how class-based views streamline the development process by abstracting common tasks in super classes. This abstraction helps reduce the workload and simplifies the implementation of app features.
+By examining the commented-out function-based views and comparing them to the built-in generic views, I was able to observe how class-based views streamline the development process by abstracting common tasks in superclasses. This abstraction helps reduce the workload and simplifies the implementation of app features.
