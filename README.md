@@ -1,4 +1,4 @@
-# Djando Class-based and Generic Views Lab Project
+# Django Class-based and Generic Views Lab Project
 
 ## Overview
 In this lab, I was taught to incorporate features into an app by utilizing class-based and generic views in Django. The focus was on examining the differences between function-based views and class-based views, and understanding how the latter streamline the development process.
