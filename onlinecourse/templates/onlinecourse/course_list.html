@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Load static files -->
+    {% load static %}
+    <!-- Meta charset for UTF-8 encoding -->
+    <meta charset="UTF-8">
+    <!-- Title of the page -->
+    <title>Online Courses</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" type="text/css" href="{% static 'onlinecourse/course.css' %}">
+</head>
+<body>
+
+<!-- Heading for popular courses list -->
+<h2>Popular courses list</h2>
+
+<!-- Check if course list is not empty -->
+{% if course_list %}
+   <ul>
+   <!-- Loop through each course in the course list -->
+   {% for course in course_list %}
+       <div class="container">
+          <div class="row">
+            <div class="column-33">
+                <!-- Display course image -->
+                <img src="{{ MEDIA_URL }}/{{ course.image }}" width="360" height="360" >
+            </div>
+            <div class="column-66">
+                <!-- Display course name -->
+                <h1 class="xlarge-font"><b>{{ course.name }}</b></h1>
+                <!-- Display total enrollment -->
+                <p style="color:MediumSeaGreen;"><b>{{ course.total_enrollment }} enrolled</b></p>
+                <!-- Display course description -->
+                <p>{{ course.description }}</p>
+                <!-- Enrollment form -->
+                <form action="{% url 'onlinecourse:enroll' course.id %}" method="post">
+                    {% csrf_token %}
+                    <!-- Submit button for enrolling in the course -->
+                    <input class="button"  type="submit"  value="Enroll">
+                </form>
+            </div>
+          </div>
+       </div>
+       <!-- Horizontal line to separate courses -->
+       <hr>
+   {% endfor %}
+   </ul>
+<!-- If no courses are available -->
+{% else %}
+<p>No courses are available.</p>
+{% endif %}
+
+</body>
+</html>

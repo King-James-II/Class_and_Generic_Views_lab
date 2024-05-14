@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta charset for UTF-8 encoding -->
+    <meta charset="UTF-8">
+    <!-- Load static files -->
+    {% load static %}
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" type="text/css" href="{% static 'onlinecourse/course.css' %}">
+</head>
+<body>
+    <!-- Course details section -->
+    <div class="card">
+        <!-- Display course name -->
+        <h2>{{ course.name }}</h2>
+        <!-- Display course description -->
+        <h5>{{ course.description }}</h5>
+    </div>
+    <!-- Lessons section -->
+    <h2>Lessons: </h2>
+    <!-- Loop through each lesson in the course -->
+    {% for lesson in course.lesson_set.all %}
+    <!-- Display lesson details -->
+    <div class="card">
+        <!-- Display lesson number and title -->
+        <h5>Lesson {{ forloop.counter }} : {{ lesson.title }}</h5>
+        <!-- Display lesson content -->
+        <p>{{ lesson.content }}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>
